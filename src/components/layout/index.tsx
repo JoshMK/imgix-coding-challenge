@@ -1,10 +1,12 @@
 /* eslint-disable react/jsx-no-bind */
 import React, { useState } from 'react';
-import ColorField from './components/color-field';
-import CompositeImage from './components/composite-image';
-import TextField from './components/text-field';
+import ColorField from '../color-field';
+import CompositeImage from '../composite-image';
+import Heading from '../heading';
+import TextField from '../text-field';
+import styles from './index.module.css';
 
-function App() {
+function Layout() {
   const URL = process.env.REACT_APP_IMAGE_BASE_URL
     ? process.env.REACT_APP_IMAGE_BASE_URL
     : '';
@@ -22,15 +24,18 @@ function App() {
 
   return (
     <main>
-      <TextField
-        labelContent="Enter your message here:"
-        id="composite-image-text"
-        onChange={updateText}
-      />
-      <ColorField color={color} onChange={updateColor} />
+      <Heading>Customize your image!</Heading>
+      <div className={styles.container}>
+        <TextField
+          labelContent="Enter your message here:"
+          id="composite-image-text"
+          onChange={updateText}
+        />
+        <ColorField color={color} onChange={updateColor} />
+      </div>
       <CompositeImage baseURL={URL} text={text} color={color} />
     </main>
   );
 }
 
-export default App;
+export default Layout;

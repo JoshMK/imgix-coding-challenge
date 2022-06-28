@@ -1,3 +1,5 @@
+import Heading from '../heading';
+
 interface CompositeImageProps {
   baseURL: string;
   color: string;
@@ -10,10 +12,13 @@ function CompositeImage({
   text = 'test',
 }: CompositeImageProps) {
   return (
-    <img
-      alt=""
-      src={`${baseURL}butterfly.jpg?txt=${text}&blend=${color}&w=640&txtclr=fff&txtalign=center%2Cmiddle&txtsize=48&bm=normal&balph=50`}
-    />
+    <>
+      <Heading size={2}>Your Result:</Heading>
+      <img
+        alt=""
+        src={`${baseURL}butterfly.jpg?txt=${text}&blend=${color}&w=640&txtclr=fff&txtalign=center%2Cmiddle&txtsize=48&bm=normal&balph=50`}
+      />
+    </>
   );
 }
 

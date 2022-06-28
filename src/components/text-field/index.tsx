@@ -8,15 +8,17 @@ interface TextFieldProps {
 
 function TextField({ labelContent, id, onChange }: TextFieldProps) {
   return (
-    <div>
-      <label htmlFor={id}>{labelContent}</label>
+    <>
+      <label htmlFor={id} className={styles.textFieldLabel}>
+        {labelContent}
+      </label>
       <input
-        className={styles.textFieldLabel}
+        className={styles.textFieldInput}
         id={id}
         onChange={onChange}
         type="text"
       />
-    </div>
+    </>
   );
 }
 

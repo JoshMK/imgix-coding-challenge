@@ -1,0 +1,6 @@
+body {
+  --background-main: #051923;
+  background-color: var(--background-main);
+  margin: 0;
+  padding: 2em;
+}
