@@ -28,8 +28,9 @@ function Layout() {
           onChange={updateText}
         />
         <ColorField
-          color={color}
+          colorValue={color}
           id="color-field-text"
+          labelText="Pick an image overlay color:"
           onChange={updateColor}
         />
       </div>
