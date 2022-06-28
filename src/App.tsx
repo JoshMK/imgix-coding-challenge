@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import CompositeImage from './components/composite-image';
+import TextField from './components/text-field';
 
 function App() {
+  const URL = process.env.REACT_APP_IMAGE_BASE_URL
+    ? process.env.REACT_APP_IMAGE_BASE_URL
+    : '';
+
+  const [text, setText] = useState<string>('Hello World');
+
+  function updateText(event: React.ChangeEvent<HTMLInputElement>): void {
+    setText(event.target.value);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <TextField
+        labelContent="Enter your message here:"
+        id="composite-image"
+        onChange={updateText}
+      />
+      <CompositeImage baseURL={URL} text={text} />
+    </main>
   );
 }
 
