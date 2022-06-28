@@ -7,11 +7,7 @@ import TextField from '../text-field';
 import styles from './index.module.css';
 
 function Layout() {
-  const URL = process.env.REACT_APP_IMAGE_BASE_URL
-    ? process.env.REACT_APP_IMAGE_BASE_URL
-    : '';
-
-  const [text, setText] = useState<string>('Hello&nbsp;World');
+  const [text, setText] = useState<string>('');
   const [color, setColor] = useState<string>('ffffff');
 
   function updateText(event: React.ChangeEvent<HTMLInputElement>): void {
@@ -19,7 +15,7 @@ function Layout() {
   }
 
   function updateColor(event: React.ChangeEvent<HTMLInputElement>): void {
-    setColor(event.target.value.replace('#', '').toUpperCase());
+    setColor(event.target.value);
   }
 
   return (
@@ -27,13 +23,18 @@ function Layout() {
       <Heading>Customize your image!</Heading>
       <div className={styles.container}>
         <TextField
-          labelContent="Enter your message here:"
+          labelContent="Enter your image's message:"
           id="composite-image-text"
           onChange={updateText}
         />
-        <ColorField color={color} onChange={updateColor} />
+        <ColorField
+          color={color}
+          id="color-field-text"
+          onChange={updateColor}
+        />
       </div>
-      <CompositeImage baseURL={URL} text={text} color={color} />
+      <Heading size={2}>Your Result:</Heading>
+      <CompositeImage text={text} color={color} />
     </main>
   );
 }
