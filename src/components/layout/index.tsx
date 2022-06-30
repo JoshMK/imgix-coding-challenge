@@ -6,9 +6,9 @@ import Heading from '../heading';
 import TextField from '../text-field';
 import styles from './index.module.css';
 
-function Layout() {
+export default function Layout() {
   const [text, setText] = useState<string>('');
-  const [color, setColor] = useState<string>('ffffff');
+  const [color, setColor] = useState<string>('#ffffff');
 
   function updateText(event: React.ChangeEvent<HTMLInputElement>): void {
     setText(event.target.value);
@@ -22,22 +22,26 @@ function Layout() {
     <main>
       <Heading>Customize your image!</Heading>
       <div className={styles.container}>
-        <TextField
-          labelContent="Enter your image's message:"
-          id="composite-image-text"
-          onChange={updateText}
-        />
-        <ColorField
-          colorValue={color}
-          id="color-field-text"
-          labelText="Pick an image overlay color:"
-          onChange={updateColor}
-        />
+        <form>
+          <fieldset>
+            <TextField
+              labelContent="Enter your image's message:"
+              id="composite-image-text"
+              onChange={updateText}
+            />
+            <ColorField
+              colorValue={color}
+              id="color-field-text"
+              labelText="Pick an image overlay color:"
+              onChange={updateColor}
+            />
+          </fieldset>
+        </form>
       </div>
-      <Heading size={2}>Your Result:</Heading>
+      <Heading size={2} className="result">
+        Your Result:
+      </Heading>
       <CompositeImage text={text} color={color} />
     </main>
   );
 }
-
-export default Layout;

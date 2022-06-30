@@ -7,7 +7,12 @@ interface ColorProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function ColorField({ colorValue, id, labelText, onChange }: ColorProps) {
+export default function ColorField({
+  colorValue,
+  id,
+  labelText,
+  onChange,
+}: ColorProps) {
   return (
     <>
       <label htmlFor={id} className={styles.colorFieldLabel}>
@@ -23,5 +28,3 @@ function ColorField({ colorValue, id, labelText, onChange }: ColorProps) {
     </>
   );
 }
-
-export default ColorField;

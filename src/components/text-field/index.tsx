@@ -6,7 +6,11 @@ interface TextFieldProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function TextField({ labelContent, id, onChange }: TextFieldProps) {
+export default function TextField({
+  labelContent,
+  id,
+  onChange,
+}: TextFieldProps) {
   return (
     <>
       <label htmlFor={id} className={styles.textFieldLabel}>
@@ -21,5 +25,3 @@ function TextField({ labelContent, id, onChange }: TextFieldProps) {
     </>
   );
 }
-
-export default TextField;

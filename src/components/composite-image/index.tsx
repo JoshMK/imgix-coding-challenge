@@ -5,7 +5,10 @@ interface CompositeImageProps {
   text?: string;
 }
 
-function CompositeImage({ color, text = '' }: CompositeImageProps) {
+export default function CompositeImage({
+  color,
+  text = '',
+}: CompositeImageProps) {
   const URL = process.env.REACT_APP_IMAGE_BASE_URL
     ? process.env.REACT_APP_IMAGE_BASE_URL
     : '';
@@ -19,5 +22,3 @@ function CompositeImage({ color, text = '' }: CompositeImageProps) {
     />
   );
 }
-
-export default CompositeImage;

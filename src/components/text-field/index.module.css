@@ -6,7 +6,7 @@
 }
 
 .textFieldLabel {
-    --color-main: #fff;
+    --color-main: #000;
     color: var(--color-main);
     padding: .5rem .5rem .5rem 0;
     font-family: 'Poppins', sans-serif;

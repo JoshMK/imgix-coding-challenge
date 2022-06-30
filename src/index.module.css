@@ -4,3 +4,17 @@ body {
   margin: 0;
   padding: 2em;
 }
+
+main {
+  --background-main: #fff;
+  background-color: var(--background-main);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 640px;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}

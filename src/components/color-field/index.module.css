@@ -1,8 +1,9 @@
 .colorFieldLabel {
-    margin-top: 1rem;
-    color: #fff;
+    --color-main: #000;
+    color: var(--color-main);
     display: inline-block;
     font-family: 'Poppins', sans-serif;
+    margin-top: 1rem;
 }
 
 .colorFieldInput {
