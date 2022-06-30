@@ -1,7 +1,8 @@
 .textFieldInput {
-    padding: 0.5rem 0;
+    border-radius: 4px;
     display: block;
     margin-top: 1rem;
+    padding: 0.5rem 0;
     width: 100%;
 }
 

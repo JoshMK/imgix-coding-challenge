@@ -8,7 +8,7 @@ import styles from './index.module.css';
 
 export default function Layout() {
   const [text, setText] = useState<string>('');
-  const [color, setColor] = useState<string>('#ffffff');
+  const [color, setColor] = useState<string>('#000000');
 
   function updateText(event: React.ChangeEvent<HTMLInputElement>): void {
     setText(event.target.value);
