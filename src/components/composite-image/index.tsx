@@ -17,7 +17,7 @@ export default function CompositeImage({
   return (
     <img
       className={styles.compositeImage}
-      alt=""
+      alt="butterfly resting on a leaf overlaid by user's text and color input"
       src={`${URL}butterfly.jpg?txt=${FORMATTED_TEXT}&blend=${FORMATTED_COLOR}&w=640&txtclr=fff&txtalign=center%2Cmiddle&txtsize=48&bm=normal&balph=50`}
     />
   );
