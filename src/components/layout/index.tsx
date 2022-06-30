@@ -38,9 +38,7 @@ export default function Layout() {
           </fieldset>
         </form>
       </div>
-      <Heading size={2} className="result">
-        Your Result:
-      </Heading>
+      <Heading size={2}>Your Result:</Heading>
       <CompositeImage text={text} color={color} />
     </main>
   );
