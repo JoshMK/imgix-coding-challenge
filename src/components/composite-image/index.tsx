@@ -12,7 +12,7 @@ export default function CompositeImage({
   const URL = process.env.REACT_APP_IMAGE_BASE_URL
     ? process.env.REACT_APP_IMAGE_BASE_URL
     : '';
-  const FORMATTED_COLOR = color.replace('#', '').toUpperCase();
+  const FORMATTED_COLOR = color.replace('#', '').toLowerCase();
   const FORMATTED_TEXT = text.replace(' ', '%20');
   return (
     <img

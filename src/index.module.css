@@ -5,6 +5,11 @@ body {
   padding: 2em;
 }
 
+fieldset {
+  border: none;
+  padding: 0;
+}
+
 main {
   --background-main: #fff;
   background-color: var(--background-main);
@@ -12,9 +17,4 @@ main {
   padding: 1rem;
   margin: 0 auto;
   max-width: 640px;
-}
-
-fieldset {
-  border: none;
-  padding: 0;
 }

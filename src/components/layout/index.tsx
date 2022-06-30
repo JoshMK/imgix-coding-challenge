@@ -4,7 +4,6 @@ import ColorField from '../color-field';
 import CompositeImage from '../composite-image';
 import Heading from '../heading';
 import TextField from '../text-field';
-import styles from './index.module.css';
 
 export default function Layout() {
   const [text, setText] = useState<string>('');
@@ -21,23 +20,21 @@ export default function Layout() {
   return (
     <main>
       <Heading>Customize your image!</Heading>
-      <div className={styles.container}>
-        <form>
-          <fieldset>
-            <TextField
-              labelContent="Enter your image's message:"
-              id="composite-image-text"
-              onChange={updateText}
-            />
-            <ColorField
-              colorValue={color}
-              id="color-field-text"
-              labelText="Pick an image overlay color:"
-              onChange={updateColor}
-            />
-          </fieldset>
-        </form>
-      </div>
+      <form>
+        <fieldset>
+          <TextField
+            labelContent="Enter your image's message:"
+            id="composite-image-text"
+            onChange={updateText}
+          />
+          <ColorField
+            colorValue={color}
+            id="color-field-text"
+            labelText="Pick an image overlay color:"
+            onChange={updateColor}
+          />
+        </fieldset>
+      </form>
       <Heading size={2}>Your Result:</Heading>
       <CompositeImage text={text} color={color} />
     </main>
